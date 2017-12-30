@@ -18,9 +18,7 @@ export default class Index extends Component {
   render() {
     return (
       <Layout>
-        <Intro>
-          Calorie calculator utilizing the speed of SSR with Next.js
-        </Intro>
+        <Intro>Calorie calculator build to experiment with Next.js</Intro>
       </Layout>
     );
   }

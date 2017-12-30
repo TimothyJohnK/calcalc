@@ -30,13 +30,19 @@ const ButtonSpan = styled.span`
   align-items: center;
 `;
 
+const Result = styled.div`
+  max-width: calc(100%);
+  text-align: center;
+`;
+
 class Calculator extends Component {
   constructor(props) {
     super(props);
     this.state = {
       exercise: '',
       incline: '',
-      duration: ''
+      duration: '',
+      calories: null
     };
   }
 
@@ -54,38 +60,41 @@ class Calculator extends Component {
       duration: ''
     });
   }
-
   handleSubmit(e) {
     e.preventDefault();
     console.log(this.state);
+
     this.setState({
       exercise: '',
       incline: '',
-      duration: ''
+      duration: '',
+      calories: ''
     });
   }
 
   render() {
+    const calories = 10 * this.state.duration * (this.state.incline / 2);
     return (
       <CalcForm>
+        <Result>{calories} calories burned</Result>
         <label>Exercise</label>
         <input
           name="exercise"
-          placeholder="Exercise"
+          placeholder="Walking"
           value={this.state.exercise}
           onChange={this.handleChange.bind(this)}
         />
         <label>Incline</label>
         <input
           name="incline"
-          placeholder="Incline"
+          placeholder="2%"
           value={this.state.incline}
           onChange={this.handleChange.bind(this)}
         />
-        <label>Duration </label>
+        <label>Duration (in mins)</label>
         <input
           name="duration"
-          placeholder="Duration"
+          placeholder="30"
           value={this.state.duration}
           onChange={this.handleChange.bind(this)}
         />
