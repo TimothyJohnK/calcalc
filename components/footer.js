@@ -11,6 +11,7 @@ const Footer = styled.div`
   bottom: 0;
   height: 3em;
   text-decoration: none;
+  margin-top: 6em;
 `;
 
 const A = styled.a`

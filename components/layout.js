@@ -6,7 +6,7 @@ import Footer from './footer';
 import { Calc } from '../pages/calculator';
 
 const Wrapper = styled.div`
-  height: 100%;
+  min-height: 100%;
   color: black;
 `;
 
